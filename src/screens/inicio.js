@@ -1,20 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>tela inicio</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+import React, { useEffect, useState } from 'react';
+import { View, TextInput, Button, Stylesheet } from 'react-native-web';
+import * as Location from 'expo-location';
+import MapView, {Maker} from 'react-native-maps'
