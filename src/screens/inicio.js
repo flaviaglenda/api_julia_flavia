@@ -3,7 +3,7 @@ import { View, TextInput, Button, Stylesheet } from 'react-native-web';
 import * as Location from 'expo-location';
 import MapView, {Maker} from 'react-native-maps';
 
-export default funcion HomeScreen({navigation}) {
+export default function HomeScreen({navigation}) {
   const [location, setLocation] = useState(null);
   const [destination, setDestination] = useState('');
 
