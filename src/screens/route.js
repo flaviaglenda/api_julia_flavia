@@ -22,7 +22,7 @@ const RouteScreen = ({ route }) => {
                         limit: 1,
                     },
                     headers: {
-                        'User-Agent': 'MeuAppDeRotas/1.0 (meuemail@exemplo.com)', // Substitua por algo seu
+                        'User-Agent': 'api_julia_flavia/1.0 (conconijulia@gmail.com)', // Substitua por algo seu
                     },
                 });
 
@@ -60,7 +60,7 @@ const RouteScreen = ({ route }) => {
                 };
 
                 const headers = {
-                    Authorization: '5b3ca3597851110001cf24988bf327f00a1406c81fa8d3fe2de32f3d',
+                    Authorization: '5b3ce3597851110001cf6248f335d0ffb8264ff8b8267df4fefdd367',
                     'Content-Type': 'application/json',
                 };
 
