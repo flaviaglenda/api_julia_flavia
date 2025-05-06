@@ -1,20 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, TextInput, Button, Stylesheet } from 'react-native-web';
+import * as Location from 'expo-location';
+import MapView, {Maker} from 'react-native-maps';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>oi </Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+export default function HomeScreen({navigation}) {
+  const [location, setLocation] = useState(null);
+  const [destination, setDestination] = useState('');
+
+  useEffect(() => {
+    (async () => {
+      const {status} = await Location.requestBackgroundPermissionsAsync();
+      if (status != 'granted') return;
+      const loc = await Location.getCurrentPositionAsync({});
+      setLocation(loc.coords);
+    })();
+  }, []);
+
+  const hanldeNavigate = () => {
+    if (!destination || !location) return;
+    navigation.navigate('Route', {destination, origin: location});
+  };
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
