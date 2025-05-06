@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
 //                         limit: 1,
 //                     },
 //                     headers: {
-//                         'User-Agent': 'app_julia_flavia_api/1.0 (conconijulia@gmail.com)', // Substitua por algo seu
+//                         'User-Agent': 'app_juliaflavia_api/1.0 (conconijulia@gmail.com)', // Substitua por algo seu
 //                     },
 //                 });
 

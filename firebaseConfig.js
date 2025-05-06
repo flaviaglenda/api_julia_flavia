@@ -1,22 +1,21 @@
-// firebaseConfig.js
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";  // Importando getAuth para usar autenticação
-import AsyncStorage from '@react-native-async-storage/async-storage';  // Importando AsyncStorage para persistência
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyB0PzGKlVO5GYLVLJBzGz7SDMvmUx3R7YM",
-  authDomain: "app-moov.firebaseapp.com",
-  projectId: "app-moov",
-  storageBucket: "app-moov.appspot.com",
-  messagingSenderId: "1089950749936",
-  appId: "1:1089950749936:web:0acdf29ddfc783497b9e35",
-  measurementId: "G-TRE1G69KM3"
+  apiKey: "AIzaSyBYm7I0H7RZg2T4TEy-kzxQB_wEIb310hY",
+  authDomain: "moov-app-a101a.firebaseapp.com",
+  projectId: "moov-app-a101a",
+  storageBucket: "moov-app-a101a.firebasestorage.app",
+  messagingSenderId: "105517334740",
+  appId: "1:105517334740:web:9e3a9abdf8dc57a957fb41",
+  measurementId: "G-2QD09VG10T"
 };
 
-// Inicializando o Firebase com a configuração
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-// Inicializando o Firebase Auth
-const auth = getAuth(app);
-
-export { app, auth };
+const analytics = getAnalytics(app);
