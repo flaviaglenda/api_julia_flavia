@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, Alert, StyleSheet, ActivityIndicator } from 'react-native';
 import MapView, { Marker, Polyline } from 'react-native-maps';
+
 import axios from 'axios';
 import polyline from '@mapbox/polyline';
 
@@ -22,7 +23,7 @@ const RouteScreen = ({ route }) => {
                         limit: 1,
                     },
                     headers: {
-                        'User-Agent': 'app_juliaflavia_api/1.0 (conconijulia@gmail.com)', // Substitua por algo seu
+                        'User-Agent': 'app_juliaFlavia_api/1.0 (flaviaglenda15@gmail.com)',
                     },
                 });
 
@@ -46,6 +47,7 @@ const RouteScreen = ({ route }) => {
 
         getCoordinatesFromName();
     }, []);
+
     useEffect(() => {
         if (!destCoords) return;
 
@@ -53,14 +55,14 @@ const RouteScreen = ({ route }) => {
             try {
                 const body = {
                     coordinates: [
-                        [origin.longitude, origin.latitude],
-                        [destCoords.longitude, destCoords.latitude],
+                        [origin.latitude, origin.latitude],
+                        [destCoords.longitude, destCoords.longitude],
                     ],
                     format: 'json',
                 };
 
                 const headers = {
-                    Authorization: '5b3ce3597851110001cf6248f335d0ffb8264ff8b8267df4fefdd367',
+                    Authorization: '5b3ce3597851110001cf6248f8beb5edcdf84ce28b33c64c168d83b7',
                     'Content-Type': 'application/json',
                 };
 
@@ -111,7 +113,7 @@ const RouteScreen = ({ route }) => {
                 style={styles.map}
                 initialRegion={{
                     latitude: origin.latitude,
-                    longitude: origin.latitude,
+                    longitude: origin.longitude,
                     latitudeDelta: 0.05,
                     longitudeDelta: 0.05,
                 }}

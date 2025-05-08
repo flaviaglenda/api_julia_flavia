@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, TextInput, Button, StyleSheet } from 'react-native';
+import { View, TextInput, Button, StyleSheet, Platform, Text } from 'react-native';
 import * as Location from 'expo-location';
 import MapView, { Marker } from 'react-native-maps';
 
@@ -11,6 +11,7 @@ export default function HomeScreen({ navigation }) {
     (async () => {
       const { status } = await Location.requestForegroundPermissionsAsync();
       if (status !== 'granted') return;
+
       const loc = await Location.getCurrentPositionAsync({});
       setLocation(loc.coords);
     })();
@@ -18,7 +19,13 @@ export default function HomeScreen({ navigation }) {
 
   const handleNavigate = () => {
     if (!destination || !location) return;
-    navigation.navigate('Route', { destination, origin: location });
+
+    navigation.navigate('Viagem', {
+      destination,        
+      origin: location,    
+    });
+    
+
   };
 
   return (
@@ -30,7 +37,7 @@ export default function HomeScreen({ navigation }) {
         onChangeText={setDestination}
       />
       <Button title="Ver rota" onPress={handleNavigate} />
-      {location && (
+      {location && Platform.OS !== 'web' && (
         <MapView
           style={styles.map}
           initialRegion={{
@@ -54,11 +61,14 @@ const styles = StyleSheet.create({
   },
   input: {
     borderWidth: 1,
-    marginBottom: 8,
-    padding: 8,
+    borderColor: '#ccc',
+    padding: 10,
+    borderRadius: 5,
+    marginBottom: 10,
   },
   map: {
     flex: 1,
-    marginTop: 16,
+    marginTop: 10,
+    borderRadius: 10,
   },
 });

@@ -4,11 +4,11 @@
     "slug": "app_juliaFlavia_api",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./src/assets/icon.png",
+    "icon": "./src/assets/moov_azul.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./src/assets/splash-icon.png",
+      "image": "./src/assets/moov_azul.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
