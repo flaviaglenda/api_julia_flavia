@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, TextInput, Button, StyleSheet, Platform, Text } from 'react-native';
 import * as Location from 'expo-location';
-<<<<<<< HEAD
 import MapView, {Maker} from 'react-native-maps';
-import { setStatusBarBackgroundColor } from 'expo-status-bar';
-=======
-import MapView, { Marker } from 'react-native-maps';
->>>>>>> 556626cee087db6e87c840e79284902d6a4a3985
 
 export default function HomeScreen({ navigation }) {
   const [location, setLocation] = useState(null);
@@ -59,23 +54,6 @@ export default function HomeScreen({ navigation }) {
   );
 }
 
-<<<<<<< HEAD
-
-// export default function App() {
-//   return(
-//     <View style={styles.container} >
-//       <Text>Seja Bem-vindo(a) ao Maps!</Text>
-//     </View>
-//   );
-// }
-
-// const styles = Stylesheet.create({
-//   container: {
-//     flex: 1,
-//     setStatusBarBackgroundColor: '#50F',
-//   }
-// });
-=======
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -94,4 +72,4 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
 });
->>>>>>> 556626cee087db6e87c840e79284902d6a4a3985
+
